@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hoşgeldin</title>
+  <style>
+    body {
+      background: black;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="welcome-message">Bilginiz alındı. Teşekkürler!</h1>
+
+  <script>
+    const name = localStorage.getItem("userName");
+    if (name) {
+      document.getElementById("welcome-message").textContent = `Hoşgeldin, ${name}!`;
+      localStorage.removeItem("userName"); // istersen kaldırabilirsin
+    }
+  </script>
+</body>
+</html>
